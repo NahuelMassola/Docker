@@ -6,6 +6,8 @@ dotenv.config({ path: `.env.${process.env.ENVIROMENT || "development"}`}) ;
 logger.info(`'MODE : ${process.env.ENVIROMENT}'`)
 
 module.exports ={
+  DB_HOST: process.env.DB_HOST , 
+  DB_PASSWORD: process.env.DB_PASSWORD,
   NODE: process.env.ENVIROMENT,
   MONGODBURL: process.env.MONGODBURL,
   PRIVATE_KEY_JWT: process.env.PRIVATE_KEY_JWT,

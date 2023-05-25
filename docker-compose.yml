@@ -1,4 +1,4 @@
-version: "3.0"
+version: "3"
 
 services:
   # nombre del servicio
@@ -7,18 +7,16 @@ services:
     container_name: mongo_db_container
     ports:
       # local --> contenedor
-      - 27017:27017
+      - 27018:27017
     restart: always
-    volumes:
-      - mongodocker:/data/configdb
-      - mongodocker:/data/db
+    
 
   api:
     build: .
     container_name: api_container
     ports:
       # local --> contenedor
-      - 6000:6000
+      - 7000:6000
     depends_on:
       - mongodb
     restart: always
